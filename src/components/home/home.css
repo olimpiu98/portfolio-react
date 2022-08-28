@@ -1,0 +1,163 @@
+.home {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.intro {
+	max-width: 540px;
+	text-align: center;
+}
+
+.home__img {
+	margin-bottom: 1.5rem;
+	max-width: 35%;
+	max-height: 35%;
+	border-radius: 100%;
+	border: 1px solid rgb(0, 0, 0);
+}
+
+.home__name {
+	font-size: var(--h1-font-size);
+	font-weight: var(--font-bold);
+	margin-bottom: 0.5rem;
+}
+
+.home__socials {
+	display: flex;
+	column-gap: 1.25rem;
+	margin: 1.5rem 0;
+	justify-content: center;
+}
+
+.home__social-link {
+	font-size: 1.5rem;
+	transition: 0.3s;
+	color: rgba(104, 104, 104, 0.832);
+}
+
+.home__social-link:hover {
+	color: #ff4c60;
+}
+
+.scroll__down {
+	position: absolute;
+	bottom: 2.5rem;
+	left: 0;
+	width: 100%;
+}
+
+.home__scroll-name {
+	font-size: var(--small-font-size);
+}
+
+.mouse {
+	border: 2px solid var(--text-color);
+	display: block;
+	height: 1.6rem;
+	width: 1.25rem;
+	margin: auto;
+	margin-top: 0.75rem;
+	border-radius: 1rem;
+	position: relative;
+}
+
+@keyframes ani-mouse {
+	0% {
+		top: 29%;
+	}
+	15% {
+		top: 50%;
+	}
+	50% {
+		top: 50%;
+	}
+	100% {
+		top: 29%;
+	}
+}
+
+.wheel {
+	background-color: var(--title-color);
+	border-radius: 100%;
+	width: 0.25rem;
+	height: 0.25rem;
+	position: absolute;
+	top: 0.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	animation: ani-mouse 2s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.shapes {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.shape {
+	position: absolute;
+	animation-name: spin;
+	animation-duration: 5000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.s1 {
+	left: 14%;
+	top: 10%;
+}
+.s2 {
+	left: 21%;
+	top: 30%;
+}
+.s3 {
+	left: 16%;
+	bottom: 40%;
+}
+.s4 {
+	left: 10%;
+	bottom: 30%;
+}
+.s5 {
+	left: 35%;
+	top: 32%;
+}
+.s6 {
+	left: 23%;
+	bottom: 20%;
+}
+.s7 {
+	top: 20%;
+	right: 25%;
+}
+.s8 {
+	right: 24%;
+	bottom: 20%;
+}
+.s9 {
+	right: 40%;
+	top: 10%;
+}
+.s10 {
+	top: 45%;
+	right: 11%;
+}
+.s11 {
+	bottom: 20%;
+	right: 52%;
+}
