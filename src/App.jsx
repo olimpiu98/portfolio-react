@@ -4,7 +4,7 @@ import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Resume from "./components/resume/Resume";
 import Contact from "./components/contact/Contact";
-import Portfolio from "./components/portfolio/portfolio";
+import Portfolio from "./components/portfolio/Portfolio";
 import { useState } from "react";
 import { AiOutlinePoweroff } from "react-icons/ai";
 
