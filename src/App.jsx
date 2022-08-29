@@ -13,7 +13,6 @@ function App() {
 
 	const changeStyle = () => {
 		setTheme((prev) => (prev === "main-light" ? "main-dark" : "main-light"));
-		console.log("main");
 	};
 	return (
 		<div className='App'>

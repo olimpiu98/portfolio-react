@@ -4,7 +4,8 @@ import { GoGlobe, GoLogoGithub } from "react-icons/go";
 import "./portfolio.css";
 
 const Portfolio = () => {
-	const [items, setItems] = useState(portfoliodata);
+	const defaultPortData = portfoliodata.filter((element) => element.visible === true);
+	const [items, setItems] = useState(defaultPortData);
 	const filterItem = (categoryItem) => {
 		const updateItems = portfoliodata.filter((curEl) => {
 			return curEl.framework === categoryItem;
@@ -17,7 +18,7 @@ const Portfolio = () => {
 			<h2 className='section__title'>Portfolio</h2>
 
 			<div className='work__filters'>
-				<span className='work__item' onClick={() => setItems(portfoliodata)}>
+				<span className='work__item' onClick={() => setItems(defaultPortData)}>
 					All
 				</span>
 				<span className='work__item' onClick={() => filterItem("vanilla")}>
@@ -30,25 +31,23 @@ const Portfolio = () => {
 			</div>
 			<div className='work__container grid'>
 				{items.map((elem) => {
-					if (elem.status === true) {
-						const { id, image, title, category } = elem;
-						return (
-							<div className='work__card' key={id}>
-								<div className='work__thumbnail'>
-									<img src={image} alt='' className='work__img' />
-									<div className='work__mask'></div>
-								</div>
-								<span className='work__category'>{category}</span>
-								<h3 className='work__title'>{title}</h3>
-								<a href='#' className='work__button'>
-									<GoGlobe />
-								</a>
-								<a href='#' className='work__button2'>
-									<GoLogoGithub />
-								</a>
+					const { id, image, title, category, demo, github } = elem;
+					return (
+						<div className='work__card' key={id}>
+							<div className='work__thumbnail'>
+								<img src={image} alt='' className='work__img' />
+								<div className='work__mask'></div>
 							</div>
-						);
-					}
+							<span className='work__category'>{category}</span>
+							<h3 className='work__title'>{title}</h3>
+							<a href={demo} className='work__button'>
+								<GoGlobe />
+							</a>
+							<a href={github} className='work__button2'>
+								<GoLogoGithub />
+							</a>
+						</div>
+					);
 				})}
 			</div>
 		</section>
