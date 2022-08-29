@@ -113,12 +113,12 @@ img {
 
 .section__title::before {
 	content: "";
-	background: url(../public/assets/dots-bg.svg);
+	background: url(./public/assets/dots-bg.svg);
 	height: 2.25rem;
 	width: 2.25rem;
 	position: absolute;
-	left: -0.875rem;
-	top: -0.875rem;
+	left: -1.175rem;
+	top: 0.5rem;
 }
 
 .btn {

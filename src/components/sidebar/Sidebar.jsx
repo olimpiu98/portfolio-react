@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../../public/assets/logo.svg";
 import { AiOutlineHome, AiOutlineQuestionCircle, AiOutlineInfoCircle } from "react-icons/ai";
 import { TbBooks } from "react-icons/tb";
+import { MdWorkOutline } from "react-icons/md";
 import "./sidebar.css";
 
 const Sidebar = () => {
@@ -33,8 +34,8 @@ const Sidebar = () => {
 						</li>
 
 						<li className='nav__item'>
-							<a href='' className='nav__link'>
-								<AiOutlineQuestionCircle />
+							<a href='#work' className='nav__link'>
+								<MdWorkOutline />
 							</a>
 						</li>
 
