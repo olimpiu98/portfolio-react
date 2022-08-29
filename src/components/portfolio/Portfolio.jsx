@@ -9,7 +9,7 @@ const Portfolio = () => {
 		const updateItems = portfoliodata.filter((curEl) => {
 			return curEl.framework === categoryItem;
 		});
-		setItems(updateItems);
+		setItems((prev) => (prev = updateItems));
 	};
 
 	return (
