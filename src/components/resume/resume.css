@@ -17,7 +17,7 @@
 	color: var(--first-color);
 }
 .timeline__item a:hover {
-	color: rgb(0, 75, 174);
+	color: rgb(17, 120, 255);
 }
 .timeline {
 	background-color: var(--container-color);
