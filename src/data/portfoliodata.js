@@ -4,6 +4,8 @@ import Work3 from "../public/assets/work3.png";
 import Work4 from "../public/assets/work4.png";
 import Work5 from "../public/assets/work5.png";
 import Work6 from "../public/assets/work6.png";
+import Work7 from "../public/assets/work7.png";
+import Work8 from "../public/assets/work8.png";
 
 const portfoliodata = [
 	{
@@ -41,7 +43,7 @@ const portfoliodata = [
 		image: Work4,
 		title: "Tesla index",
 		category: "Vanilla",
-		framework: "vanila",
+		framework: "vanilla",
 		demo: "link",
 		github: "link github",
 		visible: true,
@@ -66,16 +68,26 @@ const portfoliodata = [
 		github: "link github",
 		visible: true,
 	},
-	// {
-	// 	id: 6,
-	// 	image: Work7,
-	// 	title: "Bass kit",
-	// 	category: "Vanilla",
-	// 	framework: "vanilla",
-	// 	demo: "link",
-	// 	github: "link github",
-	// 	visible: false,
-	// },
+	{
+		id: 7,
+		image: Work7,
+		title: "Simple counter",
+		category: "Vanilla",
+		framework: "vanilla",
+		demo: "link",
+		github: "link github",
+		visible: false,
+	},
+	{
+		id: 8,
+		image: Work8,
+		title: "Blackjack",
+		category: "Vanilla",
+		framework: "vanilla",
+		demo: "link",
+		github: "link github",
+		visible: false,
+	},
 ];
 
 export default portfoliodata;

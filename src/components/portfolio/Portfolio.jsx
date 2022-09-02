@@ -19,7 +19,7 @@ const Portfolio = () => {
 
 			<div className='work__filters'>
 				<span className='work__item' onClick={() => setItems(defaultPortData)}>
-					All
+					Starred
 				</span>
 				<span className='work__item' onClick={() => filterItem("vanilla")}>
 					Vanilla
@@ -27,7 +27,6 @@ const Portfolio = () => {
 				<span className='work__item' onClick={() => filterItem("react")}>
 					React
 				</span>
-				<span className='work__item'>Angular</span>
 			</div>
 			<div className='work__container grid'>
 				{items.map((elem) => {
