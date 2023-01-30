@@ -9,12 +9,10 @@ const About = () => {
 				<div className='about__data grid'>
 					<div className='about__info'>
 						<p className='about__description'>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus eum impedit ullam
-							alias tempore inventore ipsam tenetur? Consectetur odit corporis itaque facere quod
-							similique? Ratione, optio commodi! Numquam, quas veritatis.
+							I'm currently in the process of building several different projects to further expand my understanding and experience with web development. From creating basic websites to more complex and interactive ones, I'm always looking for new challenges to tackle.
 						</p>
 						<div className='about__download'>
-							<a href='#' className='btn '>
+							<a href='../../public/Olimpiu_Ticudean_Resume.pdf' className='btn '>
 								Download CV
 							</a>
 						</div>
