@@ -88,7 +88,7 @@ const portfoliodata = [
 		framework: "vanilla",
 		demo: "https://olimpiu98.github.io/blackjack/",
 		github: "https://github.com/olimpiu98/blackjack",
-		visible: true,
+		visible: false,
 	},
 	{
 		id: 9,
