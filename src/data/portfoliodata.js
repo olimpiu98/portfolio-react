@@ -6,6 +6,8 @@ import Work5 from "../public/assets/work5.png";
 import Work6 from "../public/assets/work6.png";
 import Work7 from "../public/assets/work7.png";
 import Work8 from "../public/assets/work8.png";
+import Work9 from "../public/assets/work9.png";
+import Work10 from "../public/assets/work10.png";
 
 const portfoliodata = [
 	{
