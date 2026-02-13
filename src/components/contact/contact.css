@@ -158,20 +158,20 @@
 
 /* ====== Submit Button ====== */
 .contact__btn {
-	display: inline-flex;
+	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 	width: 100%;
 	justify-content: center;
-	vertical-align: middle;
+	line-height: 1;
 }
 
 .contact__btn-icon {
 	font-size: 1.1rem;
 	transition: transform 0.3s;
-	display: inline-flex;
-	align-items: center;
-	flex-shrink: 0;
+	line-height: 0;
+	position: relative;
+	top: 2px;
 }
 
 .contact__btn:hover .contact__btn-icon {

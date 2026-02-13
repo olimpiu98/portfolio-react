@@ -16,6 +16,14 @@ const Sidebar = () => {
 
 	const closeMenu = () => setShowMenu(false);
 
+	const links = [
+		{ href: "#home", icon: <AiOutlineHome />, label: "Home" },
+		{ href: "#about", icon: <AiOutlineInfoCircle />, label: "About" },
+		{ href: "#experience", icon: <TbBooks />, label: "Resume" },
+		{ href: "#work", icon: <MdWorkOutline />, label: "Portfolio" },
+		{ href: "#contact", icon: <AiOutlineContacts />, label: "Contact" },
+	];
+
 	return (
 		<>
 			<aside className={showMenu ? "aside show-menu" : "aside"}>
@@ -29,53 +37,44 @@ const Sidebar = () => {
 				<nav className='nav'>
 					<div className='nav__menu'>
 						<ul className='nav__list'>
-							<li className='nav__item'>
-								<a href='#home' className='nav__link' data-tooltip='Home' onClick={closeMenu}>
-									<AiOutlineHome />
-								</a>
-							</li>
-
-							<li className='nav__item'>
-								<a href='#about' className='nav__link' data-tooltip='About' onClick={closeMenu}>
-									<AiOutlineInfoCircle />
-								</a>
-							</li>
-
-							<li className='nav__item'>
-								<a href='#experience' className='nav__link' data-tooltip='Resume' onClick={closeMenu}>
-									<TbBooks />
-								</a>
-							</li>
-
-							<li className='nav__item'>
-								<a href='#work' className='nav__link' data-tooltip='Portfolio' onClick={closeMenu}>
-									<MdWorkOutline />
-								</a>
-							</li>
-
-							<li className='nav__item'>
-								<a href='#contact' className='nav__link' data-tooltip='Contact' onClick={closeMenu}>
-									<AiOutlineContacts />
-								</a>
-							</li>
+							{links.map((link, i) => (
+								<li className='nav__item' key={link.label} style={{ "--i": i }}>
+									<a
+										href={link.href}
+										className='nav__link'
+										data-tooltip={link.label}
+										onClick={closeMenu}
+									>
+										{link.icon}
+										<span className='nav__label'>{link.label}</span>
+									</a>
+								</li>
+							))}
 						</ul>
 					</div>
 				</nav>
+
 				<div className='nav__footer'>
 					<span className='copyright'>&copy; 2026</span>
 				</div>
+
+				<button
+					className='nav__toggle nav__toggle--open'
+					onClick={() => setShowMenu(false)}
+					aria-label='Close menu'
+				>
+					<AiOutlineClose />
+				</button>
 			</aside>
 
-			{/* Overlay for mobile */}
 			{showMenu && <div className='aside__overlay' onClick={closeMenu}></div>}
 
-			{/* Mobile burger button — hidden on desktop via CSS */}
 			<button
-				className={`nav__toggle ${showMenu ? "nav__toggle--open" : ""}`}
-				onClick={() => setShowMenu(!showMenu)}
-				aria-label='Toggle menu'
+				className={`nav__toggle ${showMenu ? "nav__toggle--hidden" : ""}`}
+				onClick={() => setShowMenu(true)}
+				aria-label='Open menu'
 			>
-				{showMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
+				<AiOutlineMenu />
 			</button>
 		</>
 	);

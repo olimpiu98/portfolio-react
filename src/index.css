@@ -16,7 +16,7 @@
 	--sidebar-bg: #ffffff;
 	--sidebar-border: rgba(0, 0, 0, 0.04);
 	--nav-link-color: #555580;
-	--nav-toggle-bg: rgba(255, 255, 255, 0.95);
+	--nav-toggle-bg: rgba(255, 255, 255, 0.7);
 	--nav-toggle-border: rgba(108, 99, 255, 0.1);
 	--nav-toggle-color: #555580;
 	--input-bg: #ffffff;
@@ -56,7 +56,7 @@
 	--sidebar-bg: #151525;
 	--sidebar-border: rgba(255, 255, 255, 0.05);
 	--nav-link-color: #a0a0c0;
-	--nav-toggle-bg: rgba(21, 21, 37, 0.95);
+	--nav-toggle-bg: rgba(255, 255, 255, 0.04);
 	--nav-toggle-border: rgba(108, 99, 255, 0.2);
 	--nav-toggle-color: #a0a0c0;
 	--input-bg: rgba(255, 255, 255, 0.05);

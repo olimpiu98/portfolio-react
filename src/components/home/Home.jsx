@@ -14,7 +14,7 @@ const Home = () => {
 				</div>
 				<span className='home__greeting'>Hello, I'm</span>
 				<h1 className='home__name'>Olimpiu Ticudean</h1>
-				<span className='home__education'>Web Developer</span>
+				<span className='home__education'>Software Developer</span>
 				<HeaderSocials />
 				<a href='#contact' className='btn'>
 					Get in Touch

@@ -35,7 +35,6 @@ function App() {
 		assign(".home__education", "blur-in");
 		assign(".intro > .btn", "scale-pop");
 		assign(".home__social-link", "bounce-in", 0.08);
-		assign(".scroll__down", "fade-only");
 
 		// About
 		assign("#about .section__title", "fade-up");

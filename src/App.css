@@ -150,6 +150,11 @@
 		transform: none;
 	}
 
+	/* ---- prevent horizontal overflow from animated elements ---- */
+	.App {
+		overflow-x: hidden;
+	}
+
 	/* ---- disable desktop keyframe animations on mobile ---- */
 	.resume__card,
 	.work__card {
