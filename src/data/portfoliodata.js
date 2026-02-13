@@ -58,7 +58,7 @@ const portfoliodata = [
 		framework: "react",
 		demo: "https://portfolio-react-o.netlify.app/",
 		github: "https://github.com/olimpiu98/portfolio-react",
-		visible: true,
+		visible: false,
 	},
 	{
 		id: 6,

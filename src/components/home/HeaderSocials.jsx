@@ -9,19 +9,20 @@ const HeaderSocials = () => {
 				href='https://www.linkedin.com/in/olimpiu-ticudean/'
 				className='home__social-link'
 				target='_blank'
+				rel='noreferrer'
 			>
 				<FaLinkedin />
 			</a>
 
-			<a href='https://twitter.com/tic_oli' className='home__social-link' target='_blank'>
+			<a href='https://twitter.com/tic_oli' className='home__social-link' target='_blank' rel='noreferrer'>
 				<FaTwitter />
 			</a>
 
-			<a href='https://github.com/olimpiu98' className='home__social-link' target='_blank'>
+			<a href='https://github.com/olimpiu98' className='home__social-link' target='_blank' rel='noreferrer'>
 				<FaGithub />
 			</a>
 
-			<a href='https://leetcode.com/olimpiu98/' className='home__social-link' target='_blank'>
+			<a href='https://leetcode.com/olimpiu98/' className='home__social-link' target='_blank' rel='noreferrer'>
 				<SiLeetcode />
 			</a>
 		</div>

@@ -1,39 +1,77 @@
-/*/=================================== Imports ===================================/*/
-@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap");
-
 /*/=================================== Variables =============================================/*/
 :root {
-	/*-----------------------------FONT----------------------------------- */
-	/* color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424; */
 	/*-----------------------------Colors----------------------------------- */
-	--first-color: rgb(62, 115, 239);
-	--title-color: hsl(0, 0%, 7%);
-	--text-color: hsl(244, 16%, 43%);
-	--body-color: hsl(0, 0%, 88%);
-	--container-color: rgba(255, 255, 255, 0.137);
+	--first-color: #6c63ff;
+	--first-color-light: #8b83ff;
+	--first-color-dark: #5a52e0;
+	--first-color-glow: rgba(108, 99, 255, 0.15);
+	--gradient: linear-gradient(135deg, #6c63ff 0%, #48bfe3 100%);
+	--gradient-hover: linear-gradient(135deg, #5a52e0 0%, #3aadd0 100%);
+	--title-color: #1a1a2e;
+	--text-color: #555580;
+	--text-color-light: #8888aa;
+	--body-color: #f0f2f8;
+	--card-bg: rgba(255, 255, 255, 0.7);
+	--card-border: rgba(108, 99, 255, 0.08);
+	--sidebar-bg: #ffffff;
+	--sidebar-border: rgba(0, 0, 0, 0.04);
+	--nav-link-color: #555580;
+	--nav-toggle-bg: rgba(255, 255, 255, 0.95);
+	--nav-toggle-border: rgba(108, 99, 255, 0.1);
+	--nav-toggle-color: #555580;
+	--input-bg: #ffffff;
+	--input-color: #1a1a2e;
+	--input-border: rgba(108, 99, 255, 0.15);
+	--shadow: 0 4px 30px rgba(108, 99, 255, 0.08);
+	--shadow-hover: 0 8px 40px rgba(108, 99, 255, 0.15);
+	--img-border: rgba(108, 99, 255, 0.2);
+	--scrollbar-thumb: rgba(108, 99, 255, 0.3);
 	/*-----------------------------Heading----------------------------------- */
-	--h1-font-size: 2.25rem;
+	--h1-font-size: 2.5rem;
 	--h2-font-size: 1.5rem;
-	--h3-font-size: 1.25rem;
+	--h3-font-size: 1.2rem;
 	--normal-font-size: 1rem;
 	--small-font-size: 0.875rem;
-	--smaller-font-size: 0.815rem;
+	--smaller-font-size: 0.8rem;
 	/*-----------------------------Font / weight----------------------------------- */
-	--font-family: sans-serif;
+	--font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	--font-medium: 500;
 	--font-semibold: 600;
 	--font-bold: 700;
-	/*-----------------------------Box shadow----------------------------------- */
-	--shadow: 0px 5px 20px 0px rgb(69 67 96 / 10%);
-	/*-----------------------------Border----------------------------------- */
-	--border-radius: 20px;
+	--font-extrabold: 800;
+	/*-----------------------------Border / Radius----------------------------------- */
+	--border-radius: 16px;
+	--border-radius-sm: 10px;
+	--border-radius-lg: 24px;
 }
+
+/*-----------------------------Dark theme overrides----------------------------- */
+.main-dark {
+	--title-color: #e8e8f0;
+	--text-color: #a0a0c0;
+	--text-color-light: #7777a0;
+	--body-color: #0f0f1a;
+	--card-bg: rgba(255, 255, 255, 0.04);
+	--card-border: rgba(108, 99, 255, 0.12);
+	--sidebar-bg: #151525;
+	--sidebar-border: rgba(255, 255, 255, 0.05);
+	--nav-link-color: #a0a0c0;
+	--nav-toggle-bg: rgba(21, 21, 37, 0.95);
+	--nav-toggle-border: rgba(108, 99, 255, 0.2);
+	--nav-toggle-color: #a0a0c0;
+	--input-bg: rgba(255, 255, 255, 0.05);
+	--input-color: #e8e8f0;
+	--input-border: rgba(108, 99, 255, 0.2);
+	--shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+	--shadow-hover: 0 8px 40px rgba(108, 99, 255, 0.2);
+	--img-border: rgba(108, 99, 255, 0.3);
+	--scrollbar-thumb: rgba(108, 99, 255, 0.4);
+}
+
 /*/=================================== RESPONSIVE TEXT =============================================/*/
 @media screen and (max-width: 1024px) {
 	:root {
-		--h1-font-size: 1.75rem;
+		--h1-font-size: 1.85rem;
 		--h2-font-size: 1.25rem;
 		--h3-font-size: 1rem;
 		--normal-font-size: 0.938rem;
@@ -41,6 +79,7 @@
 		--smaller-font-size: 0.75rem;
 	}
 }
+
 /*/=================================== BASE =============================================/*/
 * {
 	margin: 0;
@@ -64,6 +103,8 @@ body {
 	background-color: var(--body-color);
 	line-height: 1.7;
 	color: var(--text-color);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 ul {
@@ -89,8 +130,8 @@ img {
 /*/=================================== REUSABLE =============================================/*/
 .container {
 	max-width: 1080px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
 	margin: 0 auto;
 }
 
@@ -100,59 +141,97 @@ img {
 
 .section {
 	padding-top: 7rem;
-	padding-bottom: 2rem;
+	padding-bottom: 3rem;
 }
 
 .section__title {
 	font-size: var(--h1-font-size);
-	margin-left: 0.875rem;
-	font-weight: var(--font-bold);
+	font-weight: var(--font-extrabold);
 	position: relative;
-	margin-bottom: 2.05rem;
+	margin-bottom: 3rem;
+	color: var(--title-color);
+	transition: color 0.4s;
+	letter-spacing: -0.02em;
+	padding-left: 1rem;
 }
 
 .section__title::before {
 	content: "";
-	background: url(./public/assets/dots-bg.svg);
-	height: 2.25rem;
-	width: 2.25rem;
 	position: absolute;
-	left: -1.175rem;
-	top: 0.5rem;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 4px;
+	height: 60%;
+	background: var(--gradient);
+	border-radius: 4px;
 }
 
+/*/=================================== BUTTONS  =============================================/*/
 .btn {
-	padding: 0.75rem 2rem;
+	padding: 0.85rem 2.2rem;
 	line-height: 1;
-	border-radius: 1.875rem;
-	box-shadow: 0 0 1px rgb(0 0 0 / 0%);
-	border: 1px solid transparent;
+	border-radius: 50px;
+	border: none;
 	color: #fff;
 	display: inline-block;
-	background-color: var(--first-color);
-	font-weight: var(--font-bold);
+	background: var(--gradient);
+	font-weight: var(--font-semibold);
+	font-size: var(--normal-font-size);
+	letter-spacing: 0.02em;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+	position: relative;
+	overflow: hidden;
 }
 
-@keyframes button-push {
-	50% {
-		transform: scale(0.95);
-	}
-	100% {
-		transform: scale(1);
-	}
+.btn::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+	transition: left 0.5s;
 }
 
 .btn:hover {
-	animation: button-push 0.5s linear 1;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 25px rgba(108, 99, 255, 0.4);
+	background: var(--gradient-hover);
 }
 
+.btn:hover::before {
+	left: 100%;
+}
+
+.btn:active {
+	transform: translateY(0);
+}
+
+/*/=================================== SCROLLBAR =============================================/*/
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-thumb);
+	border-radius: 10px;
+}
+
+/*/=================================== RESPONSIVE UTILS =============================================/*/
 @media screen and (max-width: 720px) {
 	.mobile-hide {
 		display: none;
 	}
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1025px) {
 	.hide-desktop {
 		display: none;
 	}

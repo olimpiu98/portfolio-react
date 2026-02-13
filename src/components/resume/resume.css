@@ -1,87 +1,205 @@
-.resume__container {
-	grid-template-columns: repeat(2, 1fr);
-	column-gap: 1.875rem;
+/* ====== Resume Section ====== */
+.resume__subtitle {
+	text-align: center;
+	color: var(--text-color-light);
+	font-size: var(--normal-font-size);
+	max-width: 480px;
+	margin: -0.5rem auto 2.5rem;
+	line-height: 1.6;
 }
 
-@media screen and (max-width: 730px) {
-	.resume__container {
-		grid-template-columns: 1fr;
-		justify-content: center;
-	}
+/* ====== Card Grid ====== */
+.resume__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 1.5rem;
 }
 
-.timeline__date {
+/* ====== Card ====== */
+.resume__card {
+	position: relative;
+	background: var(--card-bg);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid var(--card-border);
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+		box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+	box-shadow: var(--shadow);
+	display: flex;
+	flex-direction: column;
+}
+
+.resume__card:hover {
+	transform: translateY(-6px);
+	box-shadow: var(--shadow-hover);
+}
+
+/* ====== Accent Bar ====== */
+.resume__card-accent {
+	height: 4px;
+	background: var(--gradient);
+	opacity: 0.7;
+	transition: opacity 0.3s;
+}
+
+.resume__card:hover .resume__card-accent {
+	opacity: 1;
+}
+
+/* ====== Card Body ====== */
+.resume__card-body {
+	padding: 1.5rem 1.5rem 1.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	height: 100%;
+}
+
+/* ====== Card Header ====== */
+.resume__card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.resume__card-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	border-radius: 10px;
+	background: var(--first-color-glow);
+	color: var(--first-color);
+	font-size: 1.2rem;
+	transition: background 0.3s, transform 0.3s;
+}
+
+.resume__card:hover .resume__card-icon {
+	background: var(--first-color);
+	color: #fff;
+	transform: rotate(-8deg) scale(1.05);
+}
+
+.resume__card-year {
+	font-size: var(--smaller-font-size);
+	font-weight: var(--font-semibold);
+	color: var(--first-color);
+	letter-spacing: 0.04em;
+	background: var(--first-color-glow);
+	padding: 0.2rem 0.65rem;
+	border-radius: 50px;
+}
+
+/* ====== Card Title ====== */
+.resume__card-title {
+	font-size: var(--normal-font-size);
+	font-weight: var(--font-bold);
+	color: var(--title-color);
+	line-height: 1.4;
+	min-height: 2.8em;
+	display: flex;
+	align-items: flex-start;
+	transition: color 0.3s;
+}
+
+/* ====== Card Meta ====== */
+.resume__card-meta {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	flex-wrap: wrap;
 	font-size: var(--smaller-font-size);
 }
 
-.timeline__item a {
+.resume__card-provider {
+	color: var(--text-color);
+	font-weight: var(--font-medium);
+}
+
+.resume__card-separator {
+	color: var(--text-color-light);
+}
+
+.resume__card-issuer {
+	color: var(--text-color-light);
+	font-weight: var(--font-medium);
+}
+
+/* ====== Credential Link ====== */
+.resume__card-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin-top: auto;
+	font-size: var(--smaller-font-size);
+	font-weight: var(--font-semibold);
 	color: var(--first-color);
-}
-.timeline__item a:hover {
-	color: rgb(17, 120, 255);
-}
-.timeline {
-	background-color: var(--container-color);
-	padding: 1.875rem;
-	border-radius: var(--border-radius);
-	position: relative;
-	box-shadow: var(--box-shadow);
-	overflow: auto;
-	max-height: calc(100vh - 200px);
+	text-decoration: none;
+	padding: 0.35rem 0.75rem;
+	border-radius: 50px;
+	border: 1px solid var(--first-color-glow);
+	background: transparent;
+	width: fit-content;
+	align-self: center;
+	transition: all 0.3s;
 }
 
-.timeline::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-	border-radius: 10px;
-	margin-top: 33px;
-	margin-bottom: 33px;
+.resume__card-link:hover {
+	background: var(--first-color);
+	color: #fff;
+	border-color: var(--first-color);
+	transform: translateX(2px);
 }
 
-.timeline::-webkit-scrollbar {
-	width: 3px;
+.resume__card-link svg {
+	font-size: 0.85rem;
+	transition: transform 0.3s;
 }
 
-.timeline::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-	background-color: #ff8f9c80;
+.resume__card-link:hover svg {
+	transform: translate(2px, -2px);
 }
 
-.timeline__item {
-	position: relative;
-	padding-left: 3.125rem;
-	padding-bottom: 3.125rem;
+/* ====== Staggered Entrance Animation ====== */
+@keyframes cardFadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
-.timeline__item:last-child {
-	padding-bottom: 0;
+.resume__card {
+	animation: cardFadeUp 0.5s ease both;
 }
 
-.timeline__item::before {
-	content: "";
-	width: 1px;
-	height: 100%;
-	background-color: #ff4c6163;
-	position: absolute;
-	left: 0.25rem;
-	top: 0;
-}
+.resume__card:nth-child(1) { animation-delay: 0s; }
+.resume__card:nth-child(2) { animation-delay: 0.06s; }
+.resume__card:nth-child(3) { animation-delay: 0.12s; }
+.resume__card:nth-child(4) { animation-delay: 0.18s; }
+.resume__card:nth-child(5) { animation-delay: 0.24s; }
+.resume__card:nth-child(6) { animation-delay: 0.3s; }
+.resume__card:nth-child(7) { animation-delay: 0.36s; }
+.resume__card:nth-child(8) { animation-delay: 0.42s; }
+.resume__card:nth-child(9) { animation-delay: 0.48s; }
+.resume__card:nth-child(10) { animation-delay: 0.54s; }
+.resume__card:nth-child(11) { animation-delay: 0.6s; }
+.resume__card:nth-child(12) { animation-delay: 0.66s; }
 
-.timeline__icon {
-	position: absolute;
-	left: -0.7375rem;
-	top: 10px;
-	font-size: 2rem;
-	color: #ff4c60;
-	padding: 0.045rem 0;
-}
+/* ====== Responsive ====== */
+@media screen and (max-width: 600px) {
+	.resume__grid {
+		grid-template-columns: 1fr;
+		gap: 1.25rem;
+	}
 
-.timeline__title {
-	font-size: var(--h3-font-size);
-}
-
-.timeline__text {
-	font-size: var(--small-font-size);
+	.resume__card-body {
+		padding: 1.25rem;
+	}
 }
