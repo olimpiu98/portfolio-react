@@ -11,6 +11,10 @@ const Contact = () => {
 		e.preventDefault();
 		setStatus("sending");
 
+		console.log("Service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+		console.log("Template ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+		console.log("Public Key:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
 		emailjs
 			.sendForm(
 				import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -18,12 +22,14 @@ const Contact = () => {
 				formRef.current,
 				import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 			)
-			.then(() => {
+			.then((result) => {
+				console.log("EmailJS success:", result);
 				setStatus("sent");
 				formRef.current.reset();
 				setTimeout(() => setStatus(""), 5000);
 			})
-			.catch(() => {
+			.catch((error) => {
+				console.error("EmailJS error:", error);
 				setStatus("error");
 				setTimeout(() => setStatus(""), 5000);
 			});
