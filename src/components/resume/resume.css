@@ -202,4 +202,17 @@
 	.resume__card-body {
 		padding: 1.25rem;
 	}
+
+	.resume__subtitle {
+		font-size: var(--small-font-size);
+		margin-bottom: 1.75rem;
+	}
+
+	.resume__card:hover {
+		transform: none;
+	}
+
+	.resume__card-title {
+		min-height: auto;
+	}
 }

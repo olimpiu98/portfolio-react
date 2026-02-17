@@ -28,13 +28,8 @@ function App() {
 			});
 		};
 
-		// Home
-		assign(".home__img", "zoom-in");
-		assign(".home__greeting", "fade-up");
-		assign(".home__name", "clip-up");
-		assign(".home__education", "blur-in");
-		assign(".intro > .btn", "scale-pop");
-		assign(".home__social-link", "bounce-in", 0.08);
+		// Home — uses CSS-only animations (above the fold, always visible)
+		// No data-reveal assignments needed for home section
 
 		// About
 		assign("#about .section__title", "fade-up");

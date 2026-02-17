@@ -384,4 +384,43 @@
 	.contact__form:hover {
 		transform: none;
 	}
+
+	.contact.section {
+		padding-bottom: 4rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.contact__form,
+	.contact__info-card {
+		padding: 1.25rem;
+	}
+
+	.contact__heading {
+		font-size: var(--h3-font-size);
+	}
+
+	.contact__form-input {
+		height: 2.75rem;
+		padding: 0.65rem 0.85rem;
+	}
+
+	.contact__form-area .contact__form-input {
+		height: 7rem;
+	}
+
+	.contact__item {
+		padding: 0.65rem 0.75rem;
+		gap: 0.65rem;
+	}
+
+	.contact__item-icon {
+		width: 34px;
+		height: 34px;
+		font-size: 1rem;
+	}
+
+	.contact.section {
+		padding-bottom: 3rem;
+	}
 }

@@ -2,13 +2,12 @@ import React from "react";
 
 const ScrollDown = () => {
 	return (
-		<div className='scroll__down'>
-			<a href='#about' className='mouse__wrapper'></a>
+		<a href='#about' className='scroll__down' aria-label='Scroll to about section'>
 			<span className='home__scroll-name'>Scroll Down</span>
 			<span className='mouse'>
 				<span className='wheel'></span>
 			</span>
-		</div>
+		</a>
 	);
 };
 

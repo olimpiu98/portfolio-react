@@ -151,8 +151,8 @@
 	}
 
 	/* ---- prevent horizontal overflow from animated elements ---- */
-	.App {
-		overflow-x: hidden;
+	.App main {
+		overflow-x: clip;
 	}
 
 	/* ---- disable desktop keyframe animations on mobile ---- */

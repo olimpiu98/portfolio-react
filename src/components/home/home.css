@@ -3,6 +3,7 @@
 	position: relative;
 	min-height: 100vh;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
@@ -13,7 +14,7 @@
 	text-align: center;
 	position: relative;
 	z-index: 1;
-	padding-bottom: 5rem;
+	padding-bottom: 2rem;
 }
 
 /* ====== Avatar ====== */
@@ -120,17 +121,15 @@
 	transform: translateX(-50%);
 	text-align: center;
 	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
 }
 
 @media screen and (max-height: 700px) {
 	.scroll__down {
 		display: none;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	.scroll__down {
-		bottom: 1.5rem;
 	}
 }
 
@@ -147,8 +146,7 @@
 	display: block;
 	height: 1.6rem;
 	width: 1.25rem;
-	margin: auto;
-	margin-top: 0.75rem;
+	margin: 0.75rem auto 0;
 	border-radius: 1rem;
 	position: relative;
 	transition: border-color 0.4s;
@@ -212,13 +210,164 @@
 .s11 { bottom: 20%; right: 52%; animation-delay: -5.5s; }
 
 /* ====== Responsive ====== */
-@media screen and (max-width: 768px) {
-	.home__img {
-		width: 130px;
-		height: 130px;
+@media screen and (max-width: 1024px) {
+	.home {
+		min-height: 100svh;
+		min-height: 100vh; /* fallback */
+		padding-top: 3.5rem;
+		padding-bottom: 2rem;
+		justify-content: center;
+		gap: 0;
 	}
 
+	.intro {
+		padding-bottom: 1.5rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.scroll__down {
+		position: relative;
+		bottom: auto;
+		left: auto;
+		transform: none;
+		margin-top: auto;
+		padding-bottom: 1.5rem;
+	}
+
+	.home__img {
+		width: 120px;
+		height: 120px;
+	}
+
+	.home__img-wrapper {
+		margin-bottom: 1.5rem;
+	}
+
+	.home__name {
+		font-size: clamp(1.6rem, 7vw, 2.4rem);
+	}
+
+	.home__education {
+		margin-bottom: 0.25rem;
+	}
+
+	.home__socials {
+		margin: 1.25rem 0;
+	}
+
+	.home__social-link {
+		width: 40px;
+		height: 40px;
+		border-radius: 10px;
+		font-size: 1.1rem;
+	}
+
+	/* Shapes must not block touch events */
 	.shapes {
-		opacity: 0.2;
+		pointer-events: none;
+		opacity: 0.15;
+	}
+
+	/* ---- CSS-only entrance animations (no JS scroll reveal) ---- */
+	.home__img-wrapper {
+		animation: homeZoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) both;
+	}
+
+	.home__greeting {
+		animation: homeFadeUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.15s both;
+	}
+
+	.home__name {
+		animation: homeClipUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.3s both;
+	}
+
+	.home__education {
+		animation: homeFadeUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.45s both;
+	}
+
+	.home__socials {
+		animation: homeFadeUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.55s both;
+	}
+
+	.intro > .btn {
+		animation: homeScalePop 0.5s cubic-bezier(0.34, 1.4, 0.64, 1) 0.65s both;
+	}
+
+	.scroll__down {
+		animation: homeFadeUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.8s both;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.home {
+		padding-top: 2.5rem;
+		padding-bottom: 1rem;
+	}
+
+	.home__img {
+		width: 100px;
+		height: 100px;
+	}
+
+	.home__img-wrapper {
+		margin-bottom: 1.25rem;
+	}
+
+	.home__name {
+		font-size: clamp(1.4rem, 6.5vw, 2rem);
+	}
+
+	.home__greeting {
+		font-size: var(--small-font-size);
+	}
+
+	.home__social-link {
+		width: 38px;
+		height: 38px;
+		font-size: 1rem;
+	}
+}
+
+/* ---- Mobile home keyframes ---- */
+@keyframes homeZoomIn {
+	from {
+		opacity: 0;
+		transform: scale(0.85);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes homeFadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes homeClipUp {
+	from {
+		clip-path: inset(100% 0 0 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+@keyframes homeScalePop {
+	from {
+		opacity: 0;
+		transform: scale(0.75);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
 	}
 }

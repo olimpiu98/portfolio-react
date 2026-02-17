@@ -1,7 +1,6 @@
 /* ====== About ====== */
 .about__container {
 	grid-template-columns: 1fr;
-
 }
 
 .about__data {
@@ -31,4 +30,44 @@
 
 .about__download {
 	text-align: right;
+}
+
+/* ====== Mobile ====== */
+@media screen and (max-width: 1024px) {
+	.about.section {
+		padding-top: 5rem;
+		padding-bottom: 2rem;
+	}
+
+	.about__data {
+		padding: 1.75rem 1.5rem;
+	}
+
+	.about__data:hover {
+		transform: none;
+	}
+
+	.about__description {
+		margin-bottom: 1.5rem;
+		line-height: 1.8;
+	}
+
+	.about__download {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.about.section {
+		padding-top: 4rem;
+	}
+
+	.about__data {
+		padding: 1.25rem 1rem;
+	}
+
+	.about__description {
+		font-size: var(--small-font-size);
+		line-height: 1.75;
+	}
 }
