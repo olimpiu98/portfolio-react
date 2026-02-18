@@ -23,6 +23,10 @@ function App() {
 		/* ---------- assign animation types + stagger ---------- */
 		const assign = (selector, type, stagger = 0) => {
 			document.querySelectorAll(selector).forEach((el, i) => {
+				// Skip elements already visible in viewport to prevent flash
+				const rect = el.getBoundingClientRect();
+				if (rect.top < window.innerHeight && rect.bottom > 0) return;
+
 				el.setAttribute("data-reveal", type);
 				if (stagger) el.style.transitionDelay = `${i * stagger}s`;
 			});

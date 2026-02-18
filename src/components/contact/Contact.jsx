@@ -76,7 +76,7 @@ const Contact = () => {
 								</span>
 								<div>
 									<h4 className='contact__item-title'>Response Time</h4>
-									<span className='contact__item-text'>Within 24 hours</span>
+									<span className='contact__item-text'>Within 72 hours</span>
 								</div>
 							</div>
 						</div>
@@ -146,10 +146,7 @@ const Contact = () => {
 						disabled={status === "sending"}
 					>
 						{status === "sending" ? (
-							<>
-								<span className='contact__btn-spinner'></span>
-								<span>Sending...</span>
-							</>
+							<span className='contact__btn-spinner'></span>
 						) : status === "sent" ? (
 							<>
 								<span>Message Sent!</span>

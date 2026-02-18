@@ -289,13 +289,24 @@
 	justify-content: center;
 	line-height: 1;
 	position: relative;
+	min-height: 3rem;
 	transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .contact__btn:disabled {
-	opacity: 0.85;
+	opacity: 0.9;
 	cursor: not-allowed;
 	transform: none !important;
+	animation: sendingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes sendingPulse {
+	0%, 100% {
+		box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+	}
+	50% {
+		box-shadow: 0 4px 25px rgba(108, 99, 255, 0.55);
+	}
 }
 
 .contact__btn--sent {
@@ -318,12 +329,17 @@
 
 /* ====== Spinner ====== */
 .contact__btn-spinner {
-	width: 18px;
-	height: 18px;
+	display: block;
+	width: 22px;
+	height: 22px;
+	min-width: 22px;
+	min-height: 22px;
+	flex-shrink: 0;
 	border: 2.5px solid rgba(255, 255, 255, 0.3);
 	border-top-color: #fff;
 	border-radius: 50%;
-	animation: spin 0.6s linear infinite;
+	animation: spin 0.7s linear infinite;
+	margin: 0 auto;
 }
 
 @keyframes spin {
